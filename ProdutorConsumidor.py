@@ -88,24 +88,24 @@ class Item:
 if __name__ == '__main__':
     buffer = []
     lista_threads = []
-    '''while True:
+    while True:
         try:
             a, b = map(int, input("Digite a quantidade de produtores e consumidores, separados por virgula, a serem criados,"
                         " respectivamente(No max 5 no total): ").split(','))
             break
         except ValueError:
-            print("Digite novamente")'''
+            print("Digite novamente")
     a,b = 3,2
     for i in range(a):
-        '''tipo_produtor = tuple(input("Digite os tipos de itens que o Produtor {}"
-                                    " irá produzir: ".format(i)).split(','))   #tuple com os tipos do produtor.'''
+        tipo_produtor = tuple(input("Digite os tipos de itens que o Produtor {}"
+                                    " irá produzir: ".format(i)).split(','))   #tuple com os tipos do produtor.
         tipo_produtor = ('A', "B")
         t = Produtor(tipo_produtor, i)
         t.start()  #start() inicia o método run do objeto thread
         lista_threads.append(t)
     for i in range(b):
-        '''tipo_consumidor = tuple(input("Digite os tipos de itens que o Consumidor {}"
-                                      " irá consumir: ".format(i)).split(','))  # tuple com os tipos do consumidor.'''
+        tipo_consumidor = tuple(input("Digite os tipos de itens que o Consumidor {}"
+                                      " irá consumir: ".format(i)).split(','))  # tuple com os tipos do consumidor.
         tipo_consumidor = ('A', 'B')
         t = Consumidor(tipo_consumidor, i)
         t.start()
