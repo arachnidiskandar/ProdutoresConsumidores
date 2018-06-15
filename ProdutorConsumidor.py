@@ -95,21 +95,19 @@ if __name__ == '__main__':
             break
         except ValueError:
             print("Digite novamente")
-    a,b = 3,2
+    #a,b = 3,2
     for i in range(a):
-        tipo_produtor = tuple(input("Digite os tipos de itens que o Produtor {}"
-                                    " irá produzir: ".format(i)).split(','))   #tuple com os tipos do produtor.
-        tipo_produtor = ('A', "B")
-        t = Produtor(tipo_produtor, i)
-        t.start()  #start() inicia o método run do objeto thread
-        lista_threads.append(t)
+    	tipo_produtor = tuple(input("Digite os tipos de itens que o Produtor {}"
+                                    " irá produzir: ".format(i)).split(','))   #tuple com os tipos do produtor.'''
+    	t = Produtor(tipo_produtor, i)
+    	lista_threads.append(t)
     for i in range(b):
-        tipo_consumidor = tuple(input("Digite os tipos de itens que o Consumidor {}"
-                                      " irá consumir: ".format(i)).split(','))  # tuple com os tipos do consumidor.
-        tipo_consumidor = ('A', 'B')
-        t = Consumidor(tipo_consumidor, i)
-        t.start()
-        lista_threads.append(t)
+    	tipo_consumidor = tuple(input("Digite os tipos de itens que o Consumidor {}"
+                                      " irá consumir: ".format(i)).split(','))  # tuple com os tipos do consumidor.'''
+    	t = Consumidor(tipo_consumidor, i)
+    	lista_threads.append(t)
+    for t in lista_threads:
+        t.start() 
     '''join() avisa a thread main para esperar essa thread específica finalizar antes de executar a próxima instrução'''
     for thread in lista_threads:
         thread.join()
